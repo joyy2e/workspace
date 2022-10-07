@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="title">문서 객체 모델 추가/삭제</h2>
+    <div id="box"></div>
+
+
+    <script>
+        window.onload = function(){
+            // 문서에 객체(태그)를 삽입하기
+            // <h3> 태그를 생성            
+            // createElement() : 엘리먼트를 생성하여 노드 객체를 반환한다.
+            // createTextNode()	: 텍스트 노드를 생성하여 텍스트 노드를 반환한다.
+            const header = document.createElement("h3");
+            const text = document.createTextNode("동적으로 태그를 만들자...");
+
+            // <h3>에 text를 연결(삽입)한다.
+            // appendChild() : 선택한 엘리먼트의 자식 엘리먼트의 마지막에 추가한다.
+            header.appendChild(text);
+
+            // <body> 문서 하위로 <h3>를 문서 객체를 삽입한다.
+            document.body.appendChild(header);
+
+            const section = document.createElement("section");
+            document.body.appendChild(section);
+
+            // before() : 선택한 노드의 앞에 추가한다.
+            // <section>뒤에 텍스트 노드를 추가해보자
+            const t2 = document.createTextNode("<section> 태그 앞에 텍스트");
+            section.before(t2);
+
+            // after() : 선택한 노드의 뒤에 추가한다.
+            const t3 = document.createTextNode("<section> 태그 뒤에 텍스트");
+            section.after(t3);
+
+            // 테스트를 위해서 몇개를 추가해보자
+            section.appendChild(document.createTextNode("텍스트1"));
+            section.appendChild(document.createTextNode("텍스트2"));
+            section.appendChild(document.createTextNode("텍스트3"));
+
+            // prepend() : 현재 엘리먼트의 자식 엘리먼트 첫번째 앞에 추가한다.
+            const t4 = document.createTextNode("[[ <section> 자식 태그 맨 앞에]]");
+            section.prepend(t4);           
+
+            // append() : 현재 엘리먼트의 자식 엘리먼트 마지막 뒤에 추가한다.
+            const t5 = document.createTextNode("[[ <section> 자식 태그 맨 뒤에]]");
+            section.append(t5);  
+           
+            // set Attribute() : 현재 엘리먼트의 속성을 설정한다.
+            section.setAttribute("title", "메인 섹션");
+            section.setAttribute("class", "main-section");
+
+            const div = document.createElement('div');
+            const list =  "<ul>" 
+                + "<li id='html'>HTML</li>"
+                + "<li id='CSS'>CSS</li>"
+                + "<li id='JavaScript'>JavaScript</li>"
+                + "<ul>"
+
+            // 위의 <h3> 태그에 추기해서 <ul>을 아래에 넣어야 하므로 +을 해준다.            
+            // innerHTML : 엘리먼트를 텍스트로 직접 입력하여 추가/변경 한다.	
+            div.innerHTML = list;
+
+            document.body.appendChild(div);
+
+            // remove()		: 선택한 엘리먼트를 삭제
+            const html = document.getElementById("html");
+            html.remove();
+	        // removeChild()		: 부모 노드에서 선택한 자식 엘리먼트 1개를 삭제
+            
+
+            var coke = {
+                name : 'coca',
+                price: 2980
+            }
+
+            var new_coke = coke;
+            coke.name = "pepsi";
+            // console.log(coke.name, new_coke.name); //  'pepsi', 'pepsi'
+
+            // 불변성 유지
+            var coke = {
+                    name : 'coca',
+                    price : 2980
+            }
+
+            var new_coke = {...coke}; // 불변성이 유지된다.
+            coke.name = "pepsi";
+            console.log(coke.name, new_coke.name); //  'pepsi', 'coka'
+        };
+    </script>
+</body>
+</html>

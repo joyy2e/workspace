@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript</h1>
+    <script>
+        // 1. 중복선언
+        var va = 10;
+        console.log("첫번째 var 변수 선언 및 초기화(10) : " + va);
+
+        var va = 20;
+        console.log("첫번째 var 변수 선언 및 초기화(20) : " + va);
+
+        var va;
+        console.log("첫번째 var 변수 선언/초기화(x) : " + va);
+
+        var va1;
+        console.log("네번째 var 변수 선언/초기화(x) : " + va1);
+
+        let la = 10;
+        console.log("첫번째 변수 선언 및 초기화(10) : " + la);
+
+        // 중복 선언이 불가능하다.
+        // let la = 20;
+        // console.log("두번째 변수 선언 및 초기화(20) : " + la);
+
+        const ca = 10;
+        console.log("첫번째 const 변수 선언 및 초기화(10) : " + ca);
+
+        // 중복 선언이 불가능하다.
+        // const ca = 20;
+        // console.log("두번째 const 변수 선언 및 초기화(20) : " + ca);
+
+        // 2.재할당
+        var vb = 10;
+        vb = 20;
+        console.log("var 변수 재할당 " + vb);
+
+        let lb = 30;
+        lb = 40;
+        console.log("let 변수 재할당 " + lb);
+
+        // 변수 재할당이 불가능하다. 
+        // const cb = 30;
+        // cb = 40;
+        // console.log("const 변수 재할당 " + cb);
+
+        // 스코프 : 전역변수 vs 지역변수
+        if(true){
+            var a = "123";
+            let b = "456";
+            const c = "789";
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+
+        console.log(a);
+        // console.log(b);
+        // console.log(c);
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <h2 id="title">문서 객체 모델 탐색</h2>
+    <div id="fruits">
+        <ul class="ul-list">
+            <li id="apple" name="list">사과</li>
+            <li id="banana" name="list">바나나</li>
+            <li id="orange" name="list">오렌지</li>
+        </ul>
+    </div>
+    <div id="animals">
+        <ul class="ul-list">
+            <li>강아지</li>
+            <li>고양이</li>
+            <li>토끼</li>
+        </ul>
+    </div>
+
+
+    <script>
+        window.onload = function(){
+            // <head>노드를 가져오기
+            console.log("===============> head");
+            const head = document.head;
+            console.log(head);
+
+            // <body>노드를 가져오기
+            console.log("===============> body");
+            const body = document.body;
+            console.log(body);
+
+            // <body> 노드의 자식 노드를 가져오기
+            console.log("===============> childNodes");
+            const childs = body.childNodes;
+            console.log(childs);
+
+             // <body> 노드의 자식 중 가장 첫번째 노드를 가져오기
+            console.log("===============> firstchild");
+            const first = body.firstChild;
+            console.log(first);
+
+             // <body> 노드의 자식 중 가장 마지막 노드를 가져오기
+            console.log("===============> lastchild");
+            const last = body.lastChild;
+            console.log(last);
+
+            // parentNode		: 부모 노드를 읽어온다.
+            console.log("===============> parentNode");
+            // const p = next.parentNode;
+            console.log(p);
+
+	        // nextSibling		: 형제 노드에서 다음 노드를 읽어온다.
+            console.log("===============> nextSibling");
+            const ns = first.nextSibling;
+            console.log(ns);
+
+	        // previousSibling		: 형제 노드에서 이전 노드를 읽어온다.
+            console.log("===============> previousSibling");
+            const ps = last.previousSibling;
+            console.log(ps);
+        };
+    </script>
+</body>
+</html>
