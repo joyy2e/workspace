@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<h1>Ajax를 이용해 실시간 주식 현황 나타내기</h1>
+	<table border="1">
+		<tr>
+			<th>실시간 주식 현황</th>
+			<th>키워드</th>
+		</tr>
+		<tr>
+			<td id="td1">현황</td>
+			<td id="td2">주식</td>
+		</tr>
+	</table>
+	
+	<script>
+	
+		//window.onload : HTML이 다 load가 완료 했을 때 실행
+		window.onload = function(){
+            let stock = [
+                {value: "2,213.12", name: "코스피"},
+                {value: "674.48", name: "코스닥"},
+                {value: "10,859.72", name: "나스닥"},
+                {value: "31,082.56", name: "다우존스"},
+                {value: "26,890.58", name: "니케이"}
+            ]
+			
+			let i = 0;
+			let interval = setInterval(function(){
+				i = i % stock.length;
+				document.getElementById("td1").innerHTML = stock[i].value;
+				document.getElementById("td2").innerHTML = stock[i].name;
+				i++;
+			}, 2000);
+			
+			// setTimeout(함수, 밀리초);
+			setTimeout(function(){
+				// clearInterval(인터벌) 해당 인터벌 삭제
+				clearInterval(interval);
+			}, 20000);
+		}
+	</script>
+</body>
+</html>

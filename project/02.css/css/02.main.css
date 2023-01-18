@@ -145,6 +145,10 @@ main .head .text {
     white-space: pre-line;
 }
 
+main .body .image img{
+    width: 100%;
+}
+
 main .body .image {
     display: flex;
     align-items: center;

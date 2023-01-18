@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+car(40);
+
+function car(distance){
+
+    let engineOn;
+    let engineOff;
+    let drive;
+    let speed;
+
+    if(engineOn === true && engineOff === false){
+        console.log("시동이 걸렸습니다.")
+
+        if(drive === true && speed > 0){
+            console.log(distance)
+        }else if(drive === true){
+            console.log("안전위험으로 시동을 종료했습니다.");
+            engineOn === false;
+            engineOff === true;
+        }
+        
+    }
+
+    if(engineOn === false && engineOff === true){
+        console.log("시동이 꺼졌습니다.")
+    }
+
+    if(engineOn === true && drive === ture){
+        console.log("시동이 걸렸습니다.")
+    }
+}
+
+</script>
+</html>

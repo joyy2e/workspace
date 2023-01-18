@@ -1,0 +1,47 @@
+페이스북 프로젝트 구성
+
+workspace 하위에 facebook 폴더를 생성
+
+하위에 두개의 폴더를 더 생성한다.
+	1. facebook/frontend
+	2. facebook/backend
+
+frontend 폴더에서 react 프론트엔드 설치
+
+01. 리액트를 설치할 폴더로 이동
+	02. 리액트 설치 시작
+	03. 리액트 실행
+	04. 불필요한 파일 삭제
+	05. App.js 내용 삭제
+	06. 실행 확인
+
+	01. 리액트를 설치할 폴더로 이동
+		cd d:/workspace/facebook/frontend
+
+	02. 리액트 설치 시작
+	npx create-react-app ./
+
+	03. 불필요한 파일 삭제
+		logo192.png
+		logo512.png
+		App.test.js
+		logo.svg
+		reportWebVitals.js
+		seviceWorker.js
+		setupTests.js
+
+	04. App.js 내용 삭제
+
+	App.js 파일 
+		1 / 7~21 번 줄 삭제 및 Hello World! 추가
+		index.js 파일 
+		5 / 13~17 번 줄 삭제
+
+	05. 실행 확인
+		npm run start
+
+	06. 패키지 설피
+		npm i react-router-dom
+		npm i node-sass
+		npm i axios
+		npm i moment

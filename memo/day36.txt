@@ -1,0 +1,9 @@
+디렉토리 및 index.js 파일 생성
+	day06 		프로젝트 메인 디렉토리
+	index.js	프로젝트 메인 파일
+	default.css	프로젝트 메인 스타일 시트
+
+	Login.jsx
+	About.jsx
+	Home.jsx
+	NotFound.jsx
